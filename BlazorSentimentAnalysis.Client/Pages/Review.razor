@@ -11,12 +11,15 @@
 <br>
 
 <a class="twitter-share-button"
-   href="https://twitter.com/intent/tweet?text=Hello%20world">
+   href="https://twitter.com/intent/tweet?text=@tweetText"
+   data-size="large" 
+   target="_blank">
     Click to tweet
 </a>
 
 @functions {
     float happiness = 50; // 0=worst, 100=best
+    string tweetText = string.Empty; //280 characters is maximum length for the tweet text
 
     async void UpdateScoreAsync(UIChangeEventArgs evt)
     {
@@ -24,6 +27,11 @@
 
         //Make a real call to Sentiment service
         happiness = await PredictSentimentAsync(targetText);
+
+        string liveSamplesUrl = "https://aka.ms/mlnet-live-samples";
+        tweetText = $"I just tried this live ML.NET and Blazor sample for Sentiment Analysis. It was fun! Try it yourself and grab the code!: {liveSamplesUrl} #mlnet #machinelearning #dotnetcore";
+        //tweetText = $"I just tested this live ML.NET sample for Sentiment Analysis: Text << {targetText} >> was predicted as {happiness}% positive sentiment. Try it by yourself here!: {liveSamplesUrl}";
+
     }
 
     private async Task<float> PredictSentimentAsync(string targetText)
