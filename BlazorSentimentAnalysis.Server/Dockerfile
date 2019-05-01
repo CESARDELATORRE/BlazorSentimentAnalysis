@@ -5,6 +5,7 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/core/sdk:3.0-stretch AS build
 WORKDIR /src
 COPY ["BlazorSentimentAnalysis.Server/BlazorSentimentAnalysis.Server.csproj", "BlazorSentimentAnalysis.Server/"]
+COPY ["BlazorSentimentAnalysis.Server/nuget.config", "BlazorSentimentAnalysis.Server/"]
 COPY ["BlazorSentimentAnalysis.Client/BlazorSentimentAnalysis.Client.csproj", "BlazorSentimentAnalysis.Client/"]
 RUN dotnet restore "BlazorSentimentAnalysis.Server/BlazorSentimentAnalysis.Server.csproj"
 COPY . .

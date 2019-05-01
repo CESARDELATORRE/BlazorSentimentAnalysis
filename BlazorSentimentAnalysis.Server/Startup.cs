@@ -7,7 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json.Serialization;
 using System.Linq;
 
-using Extensions.ML;
+using Microsoft.Extensions.ML;
 using BlazorSentimentAnalysis.Server.ML.DataModels;
 using System.IO;
 
