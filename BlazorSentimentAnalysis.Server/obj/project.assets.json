@@ -3622,11 +3622,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DevSpikes\\ScalableSentimentAnalysisBlazorWebApp-Docker\\BlazorSentimentAnalysis.Server\\BlazorSentimentAnalysis.Server.csproj",
+      "projectUniqueName": "D:\\GitRepos\\BlazorSentimentAnalysis\\BlazorSentimentAnalysis.Server\\BlazorSentimentAnalysis.Server.csproj",
       "projectName": "BlazorSentimentAnalysis.Server",
-      "projectPath": "D:\\DevSpikes\\ScalableSentimentAnalysisBlazorWebApp-Docker\\BlazorSentimentAnalysis.Server\\BlazorSentimentAnalysis.Server.csproj",
+      "projectPath": "D:\\GitRepos\\BlazorSentimentAnalysis\\BlazorSentimentAnalysis.Server\\BlazorSentimentAnalysis.Server.csproj",
       "packagesPath": "C:\\Users\\CESARDL.CESARDLSB2-MSFT\\.nuget\\packages\\",
-      "outputPath": "D:\\DevSpikes\\ScalableSentimentAnalysisBlazorWebApp-Docker\\BlazorSentimentAnalysis.Server\\obj\\",
+      "outputPath": "D:\\GitRepos\\BlazorSentimentAnalysis\\BlazorSentimentAnalysis.Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3649,8 +3649,8 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "D:\\DevSpikes\\ScalableSentimentAnalysisBlazorWebApp-Docker\\BlazorSentimentAnalysis.Client\\BlazorSentimentAnalysis.Client.csproj": {
-              "projectPath": "D:\\DevSpikes\\ScalableSentimentAnalysisBlazorWebApp-Docker\\BlazorSentimentAnalysis.Client\\BlazorSentimentAnalysis.Client.csproj"
+            "D:\\GitRepos\\BlazorSentimentAnalysis\\BlazorSentimentAnalysis.Client\\BlazorSentimentAnalysis.Client.csproj": {
+              "projectPath": "D:\\GitRepos\\BlazorSentimentAnalysis\\BlazorSentimentAnalysis.Client\\BlazorSentimentAnalysis.Client.csproj"
             }
           }
         }
