@@ -7,8 +7,9 @@ using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json.Serialization;
 using System.Linq;
 
-using Microsoft.Extensions.ML;
+using Extensions.ML;
 using BlazorSentimentAnalysis.Server.ML.DataModels;
+using System.IO;
 
 namespace BlazorSentimentAnalysis.Server
 {
@@ -58,5 +59,15 @@ namespace BlazorSentimentAnalysis.Server
 
             app.UseBlazor<Client.Startup>();
         }
+
+        //public static string GetAbsolutePath(string relativePath)
+        //{
+        //    FileInfo _dataRoot = new FileInfo(typeof(Program).Assembly.Location);
+        //    string assemblyFolderPath = _dataRoot.Directory.FullName;
+
+        //    string fullPath = Path.Combine(assemblyFolderPath, relativePath);
+
+        //    return fullPath;
+        //}
     }
 }

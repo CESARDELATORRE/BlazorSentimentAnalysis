@@ -3,17 +3,20 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <RestoreAdditionalProjectSources>
+      https://www.myget.org/F/mlnet-experimental/api/v3/index.json;
       https://dotnet.myget.org/F/aspnetcore-dev/api/v3/index.json;
       https://dotnet.myget.org/F/blazor-dev/api/v3/index.json;
     </RestoreAdditionalProjectSources>
     <LangVersion>7.3</LangVersion>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Extensions.ML" Version="0.12.0-CI-20190422-235311" />
     <PackageReference Include="Microsoft.AspNetCore.Blazor.Server" Version="3.0.0-preview4-19216-03" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0-preview4-19216-03" />
-    <PackageReference Include="Microsoft.Extensions.ML" Version="0.12.0-preview-27625-9" />
     <PackageReference Include="Microsoft.ML.FastTree" Version="1.0.0-preview" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.4.10" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +25,12 @@
 
   <ItemGroup>
     <Folder Include="ML\DataModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ML\MLSentimentModel.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

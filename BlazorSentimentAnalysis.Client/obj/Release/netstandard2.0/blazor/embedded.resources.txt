@@ -1,0 +1,8 @@
+C:\Users\CESARDL.CESARDLSB2-MSFT\.nuget\packages\microsoft.aspnetcore.blazor\3.0.0-preview4-19216-03\lib\netstandard2.0\Microsoft.AspNetCore.Blazor.dll
+C:\Users\CESARDL.CESARDLSB2-MSFT\.nuget\packages\microsoft.aspnetcore.components\3.0.0-preview4-19216-03\lib\netstandard2.0\Microsoft.AspNetCore.Components.dll
+C:\Users\CESARDL.CESARDLSB2-MSFT\.nuget\packages\microsoft.aspnetcore.components.browser\3.0.0-preview4-19216-03\lib\netstandard2.0\Microsoft.AspNetCore.Components.Browser.dll
+C:\Users\CESARDL.CESARDLSB2-MSFT\.nuget\packages\microsoft.extensions.dependencyinjection\3.0.0-preview4.19216.2\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\CESARDL.CESARDLSB2-MSFT\.nuget\packages\microsoft.extensions.dependencyinjection.abstractions\3.0.0-preview4.19216.2\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\CESARDL.CESARDLSB2-MSFT\.nuget\packages\microsoft.jsinterop\3.0.0-preview4.19216.2\lib\netstandard2.0\Microsoft.JSInterop.dll
+C:\Users\CESARDL.CESARDLSB2-MSFT\.nuget\packages\mono.webassembly.interop\3.0.0-preview4.19216.2\lib\netstandard2.0\Mono.WebAssembly.Interop.dll
+C:\Users\CESARDL.CESARDLSB2-MSFT\.nuget\packages\system.componentmodel.annotations\4.6.0-preview4.19212.13\lib\netstandard2.0\System.ComponentModel.Annotations.dll

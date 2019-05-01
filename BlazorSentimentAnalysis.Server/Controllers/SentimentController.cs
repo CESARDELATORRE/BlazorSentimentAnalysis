@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BlazorSentimentAnalysis.Server.ML.DataModels;
-using Microsoft.Extensions.ML;
+using Extensions.ML;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

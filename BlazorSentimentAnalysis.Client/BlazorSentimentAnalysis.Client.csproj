@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -9,6 +9,7 @@
     </RestoreAdditionalProjectSources>
     <LangVersion>7.3</LangVersion>
     <RazorLangVersion>3.0</RazorLangVersion>
+    <BlazorRebuildOnFileChange>true</BlazorRebuildOnFileChange>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,5 +17,12 @@
     <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="3.0.0-preview4-19216-03" PrivateAssets="all" />
     <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.0.0-preview4-19216-03" />
   </ItemGroup>
+
+  <Target Name="FixBlazorConfigForDocker" AfterTargets="GenerateBlazorMetadataFile">
+    <WriteLinesToFile File="$(BlazorMetadataFilePath)" Lines="BlazorASPNETCoreHosted.Client.csproj" Overwrite="true" Encoding="Unicode"/>
+    <WriteLinesToFile File="$(BlazorMetadataFilePath)" Lines="$(OutDir)$(AssemblyName).dll" Overwrite="false" Encoding="Unicode"/>
+    <WriteLinesToFile File="$(BlazorMetadataFilePath)" Condition="'$(BlazorRebuildOnFileChange)'=='true'" Lines="autorebuild:true" Overwrite="false" Encoding="Unicode"/>
+    <WriteLinesToFile File="$(BlazorMetadataFilePath)" Condition="'$(BlazorEnableDebugging)'=='true'" Lines="debug:true" Overwrite="false" Encoding="Unicode"/>
+  </Target>
 
 </Project>
