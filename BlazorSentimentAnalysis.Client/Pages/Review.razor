@@ -1,33 +1,22 @@
-﻿@page "/review"
+﻿@page "/"
 @inject HttpClient Http
 
-<h1>Review</h1>
-<p>Tell us what you think about stuff in general.</p>
-<p><button class="btn btn-primary">Submit</button></p>
+<h2>Live Sentiment</h2>
+<p>Write what you think about stuff in general.</p>
 
-<p><textarea oninput=@UpdateScoreAsync cols="80"></textarea></p>
+<p><textarea oninput=@UpdateScoreAsync cols="50"></textarea></p>
 
 <HappinessScale Value=@happiness />
 
 @functions {
     float happiness = 50; // 0=worst, 100=best
 
-    void UpdateScore(UIChangeEventArgs evt)
-    {
-        string targetText = (string)evt.Value;
-
-        //Random percentage
-        Random random = new Random();
-        happiness = random.Next(0, 100);
-    }
-
     async void UpdateScoreAsync(UIChangeEventArgs evt)
     {
         string targetText = (string)evt.Value;
 
-        //Real call to Sentiment service
+        //Make a real call to Sentiment service
         happiness = await PredictSentimentAsync(targetText);
-
     }
 
     private async Task<float> PredictSentimentAsync(string targetText)
@@ -37,6 +26,16 @@
         float percentage = await Http.GetJsonAsync<float>(url);
 
         return percentage;
-
     }
+
+    // Sample test without ML.NET model
+    //
+    //void UpdateScore(UIChangeEventArgs evt)
+    //{
+    //    string targetText = (string)evt.Value;
+
+    //    //Random percentage
+    //    Random random = new Random();
+    //    happiness = random.Next(0, 100);
+    //}
 }

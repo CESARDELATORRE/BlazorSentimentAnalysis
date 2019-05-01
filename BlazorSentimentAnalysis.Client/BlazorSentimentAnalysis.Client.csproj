@@ -17,8 +17,4 @@
     <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.0.0-preview4-19216-03" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\BlazorSentimentAnalysis.Shared\BlazorSentimentAnalysis.Shared.csproj" />
-  </ItemGroup>
-
 </Project>

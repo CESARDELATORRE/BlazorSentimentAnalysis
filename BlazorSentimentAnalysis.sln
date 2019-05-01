@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorSentimentAnalysis.Server", "BlazorSentimentAnalysis.Server\BlazorSentimentAnalysis.Server.csproj", "{17019651-6789-4593-8885-694C36DF3816}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorSentimentAnalysis.Server", "BlazorSentimentAnalysis.Server\BlazorSentimentAnalysis.Server.csproj", "{17019651-6789-4593-8885-694C36DF3816}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorSentimentAnalysis.Client", "BlazorSentimentAnalysis.Client\BlazorSentimentAnalysis.Client.csproj", "{073ECF79-0F2B-41FF-9062-C3BFBF3FF76C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorSentimentAnalysis.Shared", "BlazorSentimentAnalysis.Shared\BlazorSentimentAnalysis.Shared.csproj", "{99EA17ED-1A32-4E45-9277-B17B1E174A00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorSentimentAnalysis.Client", "BlazorSentimentAnalysis.Client\BlazorSentimentAnalysis.Client.csproj", "{073ECF79-0F2B-41FF-9062-C3BFBF3FF76C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{073ECF79-0F2B-41FF-9062-C3BFBF3FF76C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{073ECF79-0F2B-41FF-9062-C3BFBF3FF76C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{073ECF79-0F2B-41FF-9062-C3BFBF3FF76C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{99EA17ED-1A32-4E45-9277-B17B1E174A00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{99EA17ED-1A32-4E45-9277-B17B1E174A00}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{99EA17ED-1A32-4E45-9277-B17B1E174A00}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{99EA17ED-1A32-4E45-9277-B17B1E174A00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
