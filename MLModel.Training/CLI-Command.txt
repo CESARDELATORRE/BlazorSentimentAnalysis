@@ -1,0 +1,5 @@
+
+PS D:\> mlnet auto-train --task binary-classification --name TwitterSentiment --output-path "D:\CLI-Tests\BinaryClassificationTwitterSentiment" --dataset "D:\Datasets\T
+witterSentiment\EN-preprocessed-twittersentiment-1.6M-emoticon-labeled.shuf.fixedBooleanLabelsAndHeader.tsv" --label-column-name sentiment_label --max-exploration-time
+1800
+

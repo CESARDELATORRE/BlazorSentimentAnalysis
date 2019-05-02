@@ -27,6 +27,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="ML\MLModel.zip">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="ML\MLSentimentModel.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

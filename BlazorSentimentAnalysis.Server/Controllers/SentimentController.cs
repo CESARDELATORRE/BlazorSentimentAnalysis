@@ -13,9 +13,9 @@ namespace BlazorSentimentAnalysis.Server.Controllers
     [ApiController]
     public class SentimentController : ControllerBase
     {
-        private readonly PredictionEnginePool<SampleObservation, SamplePrediction> _predictionEnginePool;
+        private readonly PredictionEnginePool<ModelInput, ModelOutput> _predictionEnginePool;
 
-        public SentimentController(PredictionEnginePool<SampleObservation, SamplePrediction> predictionEnginePool)
+        public SentimentController(PredictionEnginePool<ModelInput, ModelOutput> predictionEnginePool)
         {
             // Get the ML Model Engine injected, for scoring
             _predictionEnginePool = predictionEnginePool;
@@ -27,15 +27,15 @@ namespace BlazorSentimentAnalysis.Server.Controllers
         {
             string sampleText = sentimentText;
 
+            // Predict sentiment using ML.NET model
+            ModelInput sampleData = new ModelInput() { Text = sentimentText };
+            //Predict sentiment
+            ModelOutput prediction = _predictionEnginePool.Predict(sampleData);
+            float percentage = CalculatePercentage(prediction.Score);
+
             // Random simulation
             //Random random = new Random();
             //float percentage = random.Next(0, 100);
-
-            // Predict sentiment using ML.NET model
-            SampleObservation sampleData = new SampleObservation() { Col0 = sentimentText };
-            //Predict sentiment
-            SamplePrediction prediction = _predictionEnginePool.Predict(sampleData);
-            float percentage = CalculatePercentage(prediction.Score);
 
             return percentage;
         }

@@ -35,7 +35,7 @@ namespace BlazorSentimentAnalysis.Server
 
             // Register the PredictionEnginePool as a service in the IoC container for DI
             //
-            services.AddPredictionEnginePool<SampleObservation, SamplePrediction>()
+            services.AddPredictionEnginePool<ModelInput, ModelOutput>()
                     .FromFile(Configuration["MLModel:MLModelFilePath"]);
         }
 

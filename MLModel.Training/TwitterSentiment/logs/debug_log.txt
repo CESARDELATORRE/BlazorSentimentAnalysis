@@ -1,0 +1,58 @@
+Inferring Columns ...
+Creating Data loader ...
+Loading data ...
+Exploring multiple ML algorithms and settings to find you the best model for ML task: binary-classification
+For further learning check: https://aka.ms/mlnet-cli
+|     Trainer                              Accuracy      AUC    AUPRC  F1-score  Duration #Iteration             |
+[Source=AutoML, Kind=Trace] Channel started
+[Source=AutoML, Kind=Trace] Evaluating pipeline xf=TextFeaturizing{ col=tweet_en_tf:tweet_en} xf=ColumnCopying{ col=Features:tweet_en_tf} xf=Normalizing{ col=Features:Features} tr=AveragedPerceptronBinary{}  cache=+
+[Source=AutoML, Kind=Trace] 1	0.80239808752208	00:02:54.5034790	xf=TextFeaturizing{ col=tweet_en_tf:tweet_en} xf=ColumnCopying{ col=Features:tweet_en_tf} xf=Normalizing{ col=Features:Features} tr=AveragedPerceptronBinary{}  cache=+
+|1    AveragedPerceptronBinary               0.8024   0.8828   0.8821    0.8024     174.5          0             |
+[Source=AutoML, Kind=Trace] Evaluating pipeline xf=TextFeaturizing{ col=tweet_en_tf:tweet_en} xf=ColumnCopying{ col=Features:tweet_en_tf} xf=Normalizing{ col=Features:Features} tr=SdcaLogisticRegressionBinary{}  cache=+
+[Source=AutoML, Kind=Trace] 2	0.798921422374244	00:02:21.9156503	xf=TextFeaturizing{ col=tweet_en_tf:tweet_en} xf=ColumnCopying{ col=Features:tweet_en_tf} xf=Normalizing{ col=Features:Features} tr=SdcaLogisticRegressionBinary{}  cache=+
+|2    SdcaLogisticRegressionBinary           0.7989   0.8818   0.8823    0.8049     141.9          0             |
+[Source=AutoML, Kind=Trace] Evaluating pipeline xf=TextFeaturizing{ col=tweet_en_tf:tweet_en} xf=ColumnCopying{ col=Features:tweet_en_tf} tr=LightGbmBinary{}  cache=-
+[Source=AutoML, Kind=Trace] 3	0.787686238772619	00:15:54.5579891	xf=TextFeaturizing{ col=tweet_en_tf:tweet_en} xf=ColumnCopying{ col=Features:tweet_en_tf} tr=LightGbmBinary{}  cache=-
+|3    LightGbmBinary                         0.7877   0.8702   0.8699    0.7893     954.6          0             |
+[Source=AutoML, Kind=Trace] Evaluating pipeline xf=TextFeaturizing{ col=tweet_en_tf:tweet_en} xf=ColumnCopying{ col=Features:tweet_en_tf} xf=Normalizing{ col=Features:Features} tr=SymbolicSgdLogisticRegressionBinary{}  cache=+
+[Source=AutoML, Kind=Trace] 4	0.796480890825224	00:03:06.9483051	xf=TextFeaturizing{ col=tweet_en_tf:tweet_en} xf=ColumnCopying{ col=Features:tweet_en_tf} xf=Normalizing{ col=Features:Features} tr=SymbolicSgdLogisticRegressionBinary{}  cache=+
+|4    SymbolicSgdLogisticRegressionBinary    0.7965   0.8766   0.8762    0.7974     187.0          0             |
+[Source=AutoML, Kind=Trace] Evaluating pipeline xf=TextFeaturizing{ col=tweet_en_tf:tweet_en} xf=ColumnCopying{ col=Features:tweet_en_tf} xf=Normalizing{ col=Features:Features} tr=LinearSvmBinary{}  cache=+
+[Source=AutoML, Kind=Trace] 5	0.767974733320434	00:02:17.9877840	xf=TextFeaturizing{ col=tweet_en_tf:tweet_en} xf=ColumnCopying{ col=Features:tweet_en_tf} xf=Normalizing{ col=Features:Features} tr=LinearSvmBinary{}  cache=+
+|5    LinearSvmBinary                        0.7680   0.8459   0.8448    0.7682     138.0          0             |
+[Source=AutoML, Kind=Trace] Evaluating pipeline xf=TextFeaturizing{ col=tweet_en_tf:tweet_en} xf=ColumnCopying{ col=Features:tweet_en_tf} tr=FastTreeBinary{}  cache=-
+
+===============================================Experiment Results=================================================
+------------------------------------------------------------------------------------------------------------------
+|                                                     Summary                                                    |
+------------------------------------------------------------------------------------------------------------------
+|ML Task: binary-classification                                                                                  |
+|Dataset: EN-preprocessed-twittersentiment-1.6M-emoticon-labeled.shuf.fixedBooleanLabelsAndHeader.tsv            |
+|Label : sentiment_label                                                                                         |
+|Total experiment time : 1801.67 Secs                                                                            |
+|Total number of models explored: 5                                                                              |
+------------------------------------------------------------------------------------------------------------------
+|                                              Top 5 models explored                                             |
+------------------------------------------------------------------------------------------------------------------
+|     Trainer                              Accuracy      AUC    AUPRC  F1-score  Duration #Iteration             |
+|1    AveragedPerceptronBinary               0.8024   0.8828   0.8821    0.8024     174.5          1             |
+|2    SdcaLogisticRegressionBinary           0.7989   0.8818   0.8823    0.8049     141.9          2             |
+|3    SymbolicSgdLogisticRegressionBinary    0.7965   0.8766   0.8762    0.7974     187.0          4             |
+|4    LightGbmBinary                         0.7877   0.8702   0.8699    0.7893     954.6          3             |
+|5    LinearSvmBinary                        0.7680   0.8459   0.8448    0.7682     138.0          5             |
+------------------------------------------------------------------------------------------------------------------
+Generated trained model for consumption: D:\CLI-Tests\BinaryClassificationTwitterSentiment\TwitterSentiment\TwitterSentiment.Model\MLModel.zip
+Generated C# code for model consumption: D:\CLI-Tests\BinaryClassificationTwitterSentiment\TwitterSentiment\TwitterSentiment.ConsoleApp
+Check out log file for more information: D:\CLI-Tests\BinaryClassificationTwitterSentiment\TwitterSentiment\logs\debug_log.txt
+Retrieving best pipeline ...
+Inferring Columns ...
+Creating Data loader ...
+Loading data ...
+Exploring multiple ML algorithms and settings to find you the best model for ML task: binary-classification
+For further learning check: https://aka.ms/mlnet-cli
+|     Trainer                              Accuracy      AUC    AUPRC  F1-score  Duration #Iteration             |
+[Source=AutoML, Kind=Trace] Channel started
+[Source=AutoML, Kind=Trace] Evaluating pipeline xf=TextFeaturizing{ col=tweet_en_tf:tweet_en} xf=ColumnCopying{ col=Features:tweet_en_tf} xf=Normalizing{ col=Features:Features} tr=AveragedPerceptronBinary{}  cache=+
+15 sec was not enough to train at least one model for your dataset. Try with a longer time. Learn about recommended training time at https://aka.ms/cli-trainingtime
+Exiting ...
+Retrieving best pipeline ...
