@@ -1,7 +1,7 @@
 ﻿@page "/"
 @inject HttpClient Http
 
-<p><textarea oninput=@UpdateScoreAsync cols="45"></textarea></p>
+<p><textarea oninput=@UpdateScoreAsync cols="45" placeholder="Type any text like a short product review"></textarea></p>
 
 <HappinessScale Value=@happiness />
 
@@ -14,7 +14,7 @@
    href="https://twitter.com/intent/tweet?text=@tweetText"
    data-size="large" 
    target="_blank">
-    Click to tweet!
+    Click to tweet
 </a>
 
 @functions {
