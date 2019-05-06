@@ -1,4 +1,4 @@
-# ASP.NET Core hosted Blazor app
+# ASP.NET Core hosted Blazor app on Docker container
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 trigger:
@@ -12,15 +12,9 @@ variables:
 
 steps:
 
-- task: DotNetCoreInstaller@0
-  displayName: 'Install .NET Core 3.0 SDK Preview...'
-  inputs:
-    version: 3.0.100-preview4-011223
-
 - task: Docker@2
-  displayName: 'Build Docker image'
+  displayName: 'Build Docker image and push to Docker Hub'
   inputs:
     containerRegistry: 'Docker Hub CESARDL'
     repository: mlnetdemos/blazorsentimentanalysis
     dockerFile: BlazorSentimentAnalysis.Server/Dockerfile
-    command: build
