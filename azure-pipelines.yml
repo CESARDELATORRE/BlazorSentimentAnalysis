@@ -24,3 +24,17 @@ steps:
 
 - script: dotnet build --configuration $(buildConfiguration) BlazorSentimentAnalysis.Server/BlazorSentimentAnalysis.Server.csproj
   displayName: 'Building ASP.NET Core hosted Blazor app project $(buildConfiguration)...'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Generating web app binaries (dotnet publish)...'
+  inputs:
+    command: publish
+    publishWebProjects: true
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: false
+
+- task: PublishPipelineArtifact@0
+  displayName: 'Publishing Blazor app as pipeline artifact'
+  inputs:
+    artifactName: MLNETWebAPI
+    targetPath: '$(Build.ArtifactStagingDirectory)'
