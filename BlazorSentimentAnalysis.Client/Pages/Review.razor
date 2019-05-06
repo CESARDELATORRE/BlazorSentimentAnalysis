@@ -14,12 +14,12 @@
    href="https://twitter.com/intent/tweet?text=@tweetText"
    data-size="large" 
    target="_blank">
-    Click to tweet.
+    <img alt="Share on Twitter" src="~/images/Twitter_Logo_Blue.svg" height="40" />
 </a>
 
 @functions {
     float happiness = 50; // 0=worst, 100=best
-    string tweetText = string.Empty; //280 characters is maximum length for the tweet text
+    string tweetText = "I used #mldotnet for real-time sentiment analysis! Try out machine learning for .NET at dot.net/ml"; //280 characters is maximum length for the tweet text
 
     async void UpdateScoreAsync(UIChangeEventArgs evt)
     {
@@ -31,8 +31,7 @@
         // See issue https://github.com/aspnet/Blazor/issues/519.  This is needed otherwise the binding to happiness isn't updated after the async call for prediction.
         StateHasChanged();
 
-        string liveSamplesUrl = "https://aka.ms/mlnet-live-samples";
-        tweetText = $"I just tried this live ML.NET and Blazor sample for Sentiment Analysis. It was fun! Try it yourself and grab the code!: {liveSamplesUrl} #mlnet #machinelearning #dotnetcore";
+        // string liveSamplesUrl = "https://aka.ms/mlnet-live-samples";
         //tweetText = $"I just tested this live ML.NET sample for Sentiment Analysis: Text << {targetText} >> was predicted as {happiness}% positive sentiment. Try it by yourself here!: {liveSamplesUrl}";
 
     }
