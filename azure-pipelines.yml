@@ -22,4 +22,3 @@ steps:
   inputs:
     containerRegistry: 'Docker Hub CESARDL'
     repository: mlnetdemos/blazorsentimentanalysis
-    command: push
