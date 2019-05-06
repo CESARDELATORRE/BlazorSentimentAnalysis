@@ -28,14 +28,14 @@ namespace BlazorSentimentAnalysis.Server.Controllers
             string sampleText = sentimentText;
 
             // Predict sentiment using ML.NET model
-            ModelInput sampleData = new ModelInput() { Text = sentimentText };
-            //Predict sentiment
-            ModelOutput prediction = _predictionEnginePool.Predict(sampleData);
-            float percentage = CalculatePercentage(prediction.Score);
+            //ModelInput sampleData = new ModelInput() { Text = sentimentText };
+            ////Predict sentiment
+            //ModelOutput prediction = _predictionEnginePool.Predict(sampleData);
+            //float percentage = CalculatePercentage(prediction.Score);
 
             // Random simulation
-            //Random random = new Random();
-            //float percentage = random.Next(0, 100);
+            Random random = new Random();
+            float percentage = random.Next(0, 100);
 
             return percentage;
         }
