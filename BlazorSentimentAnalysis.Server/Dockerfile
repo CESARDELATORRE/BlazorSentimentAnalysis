@@ -7,8 +7,11 @@ WORKDIR /src
 COPY ["BlazorSentimentAnalysis.Server/BlazorSentimentAnalysis.Server.csproj", "BlazorSentimentAnalysis.Server/"]
 COPY ["BlazorSentimentAnalysis.Server/nuget.config", "BlazorSentimentAnalysis.Server/"]
 COPY ["BlazorSentimentAnalysis.Client/BlazorSentimentAnalysis.Client.csproj", "BlazorSentimentAnalysis.Client/"]
+RUN dotnet restore "BlazorSentimentAnalysis.Client/BlazorSentimentAnalysis.Client.csproj"
 RUN dotnet restore "BlazorSentimentAnalysis.Server/BlazorSentimentAnalysis.Server.csproj"
 COPY . .
+WORKDIR "/src/BlazorSentimentAnalysis.Client"
+RUN dotnet build "BlazorSentimentAnalysis.Client.csproj" -c Release -o /app
 WORKDIR "/src/BlazorSentimentAnalysis.Server"
 RUN dotnet build "BlazorSentimentAnalysis.Server.csproj" -c Release -o /app
 
