@@ -15,8 +15,9 @@ steps:
 - task: Docker@2
   displayName: 'Build Docker image and push to Docker Hub'
   inputs:
-    containerRegistry: 'Docker Hub CESARDL'
-    repository: mlnetdemos/blazorsentimentanalysis
+    containerRegistry: 'Docker Hub CESARDL'    
     dockerFile: BlazorSentimentAnalysis.Server/Dockerfile
     buildContext: '$(System.DefaultWorkingDirectory)'
     command: buildAndPush
+    repository: mlnetdemos/blazorsentimentanalysisserver
+    tags: latest
