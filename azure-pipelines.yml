@@ -1,6 +1,4 @@
-# ASP.NET Core
-# Build and test ASP.NET Core projects targeting .NET Core.
-# Add steps that run tests, create a NuGet package, deploy, and more:
+# ASP.NET Core hosted Blazor app
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 trigger:
@@ -33,8 +31,12 @@ steps:
     arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: false
 
-- task: PublishPipelineArtifact@0
-  displayName: 'Publishing Blazor app as pipeline artifact'
+- task: Docker@0
+  displayName: 'Building Docker image blazorsentimentanalysis'
   inputs:
-    artifactName: MLNETWebAPI
-    targetPath: '$(Build.ArtifactStagingDirectory)'
+    azureSubscription: 'BlazorSentimentAnalysisTesting - 1 - Service Endpoint'
+    azureContainerRegistry: '{"loginServer":"mlnetdemosacr.azurecr.io", "id" : "/subscriptions/e3035ac1-c06c-4daf-8939-57b3c5f1f759/resourceGroups/MLNETDemos/providers/Microsoft.ContainerRegistry/registries/mlnetdemosacr"}'
+    dockerFile: BlazorSentimentAnalysis.Server/Dockerfile
+    defaultContext: False
+    context: '$(System.DefaultWorkingDirectory)'
+    imageName: 'mlnetdemosacr/blazorsentimentanalysis:$(Build.BuildId)'
