@@ -18,3 +18,5 @@ steps:
     containerRegistry: 'Docker Hub CESARDL'
     repository: mlnetdemos/blazorsentimentanalysis
     dockerFile: BlazorSentimentAnalysis.Server/Dockerfile
+    buildContext: '$(System.DefaultWorkingDirectory)'
+    command: buildAndPush
