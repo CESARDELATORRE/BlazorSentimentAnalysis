@@ -13,12 +13,12 @@ variables:
 steps:
 
 - task: DotNetCoreInstaller@0
-  displayName: 'Installing .NET Core 3.0 SDK Preview...'
+  displayName: 'Install .NET Core 3.0 SDK Preview...'
   inputs:
     version: 3.0.100-preview4-011223
 
 - task: Docker@0
-  displayName: 'Building Docker image blazorsentimentanalysis'
+  displayName: 'Build Docker image blazorsentimentanalysis'
   inputs:
     azureSubscription: 'PoC Azure Subscription (e3035ac1-c06c-4daf-8939-57b3c5f1f759)'
     azureContainerRegistry: '{"loginServer":"mlnetdemosacr.azurecr.io", "id" : "/subscriptions/e3035ac1-c06c-4daf-8939-57b3c5f1f759/resourceGroups/MLNETDemos/providers/Microsoft.ContainerRegistry/registries/mlnetdemosacr"}'
@@ -27,10 +27,9 @@ steps:
     context: '$(System.DefaultWorkingDirectory)'
     imageName: 'mlnetdemosacr/blazorsentimentanalysis:$(Build.BuildId)'
 
-- task: Docker@0
-  displayName: 'Push Docker image blazorsentimentanalysis to ACR'
+- task: Docker@2
+  displayName: 'Push Docker image to Docker Hub'
   inputs:
-    azureSubscription: 'PoC Azure Subscription (e3035ac1-c06c-4daf-8939-57b3c5f1f759)'
-    azureContainerRegistry: '{"loginServer":"mlnetdemosacr.azurecr.io", "id" : "/subscriptions/e3035ac1-c06c-4daf-8939-57b3c5f1f759/resourceGroups/MLNETDemos/providers/Microsoft.ContainerRegistry/registries/mlnetdemosacr"}'
-    action: 'Push an image'
-    imageName: 'mlnetdemosacr/blazorsentimentanalysis:$(Build.BuildId)'
+    containerRegistry: 'Docker Hub CESARDL'
+    repository: mlnetdemos
+    command: push
