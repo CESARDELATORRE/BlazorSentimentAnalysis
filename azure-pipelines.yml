@@ -19,5 +19,8 @@ steps:
   inputs:
     version: 3.0.100-preview4-011223
 
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+- script: dotnet build --configuration $(buildConfiguration) BlazorSentimentAnalysis.Client/BlazorSentimentAnalysis.Client.csproj
+  displayName: 'Building client Blazor project $(buildConfiguration)...'
+
+- script: dotnet build --configuration $(buildConfiguration) BlazorSentimentAnalysis.Server/BlazorSentimentAnalysis.Server.csproj
+  displayName: 'Building ASP.NET Core hosted Blazor app project $(buildConfiguration)...'
