@@ -18,7 +18,9 @@ steps:
     version: 3.0.100-preview4-011223
 
 - task: Docker@2
-  displayName: 'Build Docker image and Push to Docker Hub'
+  displayName: 'Build Docker image'
   inputs:
     containerRegistry: 'Docker Hub CESARDL'
     repository: mlnetdemos/blazorsentimentanalysis
+    dockerFile: BlazorSentimentAnalysis.Server/Dockerfile
+    command: build
